@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Topics</title>
+</head>
+<body>
+  <h1>Topics</h1>
+
+  <form action="/topics/add" method="post">
+    <input type="text" name="name" placeholder="Topic Name" required>
+    <button type="submit">Add Topic</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <!-- TODO Add Delete/Edit buttons here -->
+    </tr>
+    <tr th:each="topic : ${topics}">
+      <td th:text="${topic.id}"></td>
+      <td th:text="${topic.name}"></td>
+      <!-- TODO Add Delete/Edit buttons here -->
+    </tr>
+  </table>
+</body>
+</html>
