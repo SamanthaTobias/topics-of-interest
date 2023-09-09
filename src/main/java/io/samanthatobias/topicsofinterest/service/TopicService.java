@@ -23,8 +23,15 @@ public class TopicService {
 		repository.save(topic);
 	}
 
-	// TODO delete topic
+	public void deleteTopic(Long id) {
+		Topic topic = repository.findByIdOrThrow(id);
+		repository.delete(topic);
+	}
 
-	// TODO edit topic
+	public void editTopic(Long id, String newName) {
+		Topic topic = repository.findByIdOrThrow(id);
+		topic.setName(newName);
+		repository.save(topic);
+	}
 
 }
